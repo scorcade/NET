@@ -5,30 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_011"
         mc:Ignorable="d"
-        Title="MainWindow" Height="465" Width="391">
+        Title="calculatoradd_1.0" Height="465" Width="391">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="52" Margin="14,14,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="52" Margin="14,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343"/>
         <Label x:Name="expression" Content="expression:" HorizontalAlignment="Left" Height="25" Margin="12,76,0,0" VerticalAlignment="Top" Width="72"/>
         <Label x:Name="according" Content="according" HorizontalAlignment="Left" Margin="13,102,0,0" VerticalAlignment="Top" Height="24" Width="369"/>
         <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Height="254" Margin="10,128,0,0" VerticalAlignment="Top" Width="237">
             <Grid Margin="-9,0,9,0">
-                <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" Height="45" Width="46" Click="button1_Click"/>
-                <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Margin="149,15,0,0" VerticalAlignment="Top" Height="45" Width="45"/>
-                <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Margin="26,73,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Margin="149,73,0,0" VerticalAlignment="Top" Height="45" Width="45"/>
-                <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Margin="26,128,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Margin="88,128,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Margin="148,128,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="88,16,0,0" VerticalAlignment="Top" Height="45" Width="46"/>
-                <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Height="35" Margin="26,184,0,0" VerticalAlignment="Top" Width="168"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="88*"/>
+                    <ColumnDefinition Width="137*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="digitNum1" Content="1" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" Height="45" Width="46" Click="digitNum1_Click"/>
+                <Button x:Name="digitNum3" Content="3" HorizontalAlignment="Left" Margin="61,15,0,0" VerticalAlignment="Top" Height="45" Width="45" Grid.Column="1" Click="digitNum3_Click"/>
+                <Button x:Name="digitNum4" Content="4" HorizontalAlignment="Left" Margin="26,73,0,0" VerticalAlignment="Top" Height="45" Width="46" Click="digitNum4_Click"/>
+                <Button x:Name="digitNum6" Content="6" HorizontalAlignment="Left" Margin="61,73,0,0" VerticalAlignment="Top" Height="45" Width="45" Click="button6_Click" Grid.Column="1"/>
+                <Button x:Name="digitNum5" Content="5" HorizontalAlignment="Left" Margin="0,73,0,0" VerticalAlignment="Top" Height="45" Width="46" Grid.Column="1" Click="digitNum5_Click"/>
+                <Button x:Name="digitNum7" Content="7" HorizontalAlignment="Left" Margin="26,128,0,0" VerticalAlignment="Top" Height="45" Width="46" Click="digitNum7_Click"/>
+                <Button x:Name="digitNum8" Content="8" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Height="45" Width="46" Grid.Column="1"/>
+                <Button x:Name="digitNum9" Content="9" HorizontalAlignment="Left" Margin="60,128,0,0" VerticalAlignment="Top" Height="45" Width="46" Grid.Column="1"/>
+                <Button x:Name="digitNum2" Content="2" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="45" Width="46" Grid.Column="1" Click="digitNum2_Click"/>
+                <Button x:Name="digitNum0" Content="0" HorizontalAlignment="Left" Height="35" Margin="26,184,0,0" VerticalAlignment="Top" Width="168" Grid.ColumnSpan="2"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox1" Header="GroupBox" HorizontalAlignment="Left" Height="252" Margin="256,129,0,0" VerticalAlignment="Top" Width="101">
             <Grid>
-                <Button x:Name="clear" Content="clear" HorizontalAlignment="Center" Height="46" Margin="0,21,0,0" VerticalAlignment="Top" Width="79"/>
-                <Button x:Name="add" Content="+" HorizontalAlignment="Center" Height="46" Margin="0,86,0,0" VerticalAlignment="Top" Width="79"/>
-                <Button x:Name="sum" Content="=" HorizontalAlignment="Center" Height="46" Margin="0,151,0,0" VerticalAlignment="Top" Width="79"/>
+                <Button x:Name="clear" Content="clear" HorizontalAlignment="Center" Height="46" Margin="0,21,0,0" VerticalAlignment="Top" Width="79" Click="clear_Click"/>
+                <Button x:Name="add" Content="+" HorizontalAlignment="Center" Height="46" Margin="0,86,0,0" VerticalAlignment="Top" Width="79" Click="add_Click"/>
+                <Button x:Name="sum" Content="=" HorizontalAlignment="Center" Height="46" Margin="0,151,0,0" VerticalAlignment="Top" Width="79" Click="sum_Click"/>
             </Grid>
         </GroupBox>
     </Grid>
