@@ -7,16 +7,13 @@ namespace InterfaceExample
     {
         static void Main(string[] args)
         {
-            var user = new PhoneUser(new EricssonPhone());
-            user.UsePhone();
+            var fan = new DeskFan(new PowerSupply());
+            Console.WriteLine(fan.Work());
 
 
 
-
-
-
-
-
+            //var user = new PhoneUser(new EricssonPhone()); -------------------
+            //user.UsePhone();
 
 
 
@@ -51,76 +48,113 @@ namespace InterfaceExample
         }
     }
 
-    class PhoneUser
+   public interface IPowerSupply
     {
-        public PhoneUser(IPhone phone)
+        int GetPower();
+    }
+     public class PowerSupply:IPowerSupply
+    {
+        public int GetPower()
         {
-            _phone = phone;
+            return 110;
         }
-        private IPhone _phone;
-
-        public void UsePhone()
-        {
-            _phone.Dail();   
-            _phone.PickUp();   
-            _phone.Send();   
-            _phone.Receive();
-        }
-
-
     }
 
-    interface IPhone
+   public class DeskFan
     {
-        void Dail();
-        void PickUp();
-        void Send();
-        void Receive();
-    }
-    class NokiaPhone : IPhone
-    {
-        public void Dail()
+        private IPowerSupply _PowerSupply;
+        public DeskFan(IPowerSupply powerSupply)
         {
-            Console.WriteLine("Nokia calling...");
+            _PowerSupply = powerSupply;
         }
-
-        public void PickUp()
+        public string Work()
         {
-            Console.WriteLine("Hello! This is Tim!");
-        }
-
-        public void Receive()
-        {
-            Console.WriteLine("Nokia message ring...");
-        }
-
-        public void Send()
-        {
-            Console.WriteLine("Hello!");
+            int power = _PowerSupply.GetPower();
+            if (power<=0)
+            {
+                return "Won't work.";
+            } else if (power <= 100)
+            {
+                return "Slow";
+            }else if (power <= 200)
+            {
+                return "Work fine";
+            }else
+            {
+                return "Warning!";
+            }
         }
     }
-    class EricssonPhone : IPhone
-    {
-        public void Dail()
-        {
-            Console.WriteLine("Ericsson calling...");
-        }
+    //class PhoneUser
+    //{
+    //    public PhoneUser(IPhone phone)
+    //    {
+    //        _phone = phone;
+    //    }
+    //    private IPhone _phone;
 
-        public void PickUp()
-        {
-            Console.WriteLine("Hi! This's Tim!");
-        }
+    //    public void UsePhone()
+    //    {
+    //        _phone.Dail();   
+    //        _phone.PickUp();   
+    //        _phone.Send();   
+    //        _phone.Receive();
+    //    }
 
-        public void Receive()
-        {
-            Console.WriteLine("Ericsson message ring...");
-        }
 
-        public void Send()
-        {
-            Console.WriteLine("Good evening!");
-        }
-    }
+    //}
+
+    //interface IPhone
+    //{
+    //    void Dail();
+    //    void PickUp();
+    //    void Send();
+    //    void Receive();
+    //}
+    //class NokiaPhone : IPhone
+    //{
+    //    public void Dail()
+    //    {
+    //        Console.WriteLine("Nokia calling...");
+    //    }
+
+    //    public void PickUp()
+    //    {
+    //        Console.WriteLine("Hello! This is Tim!");
+    //    }
+
+    //    public void Receive()
+    //    {
+    //        Console.WriteLine("Nokia message ring...");
+    //    }
+
+    //    public void Send()
+    //    {
+    //        Console.WriteLine("Hello!");
+    //    }
+    //}
+    //class EricssonPhone : IPhone
+    //{
+    //    public void Dail()
+    //    {
+    //        Console.WriteLine("Ericsson calling...");
+    //    }
+
+    //    public void PickUp()
+    //    {
+    //        Console.WriteLine("Hi! This's Tim!");
+    //    }
+
+    //    public void Receive()
+    //    {
+    //        Console.WriteLine("Ericsson message ring...");
+    //    }
+
+    //    public void Send()
+    //    {
+    //        Console.WriteLine("Good evening!");
+    //    }
+    //}
 
 
 }
