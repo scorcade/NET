@@ -9,7 +9,8 @@ namespace InterfaceExample
         {
             var fan = new DeskFan(new PowerSupply());
             Console.WriteLine(fan.Work());
-
+            double
+                int
 
 
             //var user = new PhoneUser(new EricssonPhone()); -------------------
