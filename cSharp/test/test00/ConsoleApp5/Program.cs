@@ -11,5 +11,14 @@ namespace ConsoleApp5
             
             Console.WriteLine(result);
         }
+        enum Leve { 
+            big,
+            min,
+            max,
+        }
+
+        class Person { 
+            
+        }
     }
 }
