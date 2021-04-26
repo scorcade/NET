@@ -8,17 +8,25 @@ namespace ConsoleApp5
         {
             Func<double, double, double> func1 = (double a, double b) => { return a + b; };
             var result = func1(100.1, 200.1);
+
+            Person person = new Person();
+            //person.Leve = Level.big;
+            person.Leve = Level.big;
             
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
+
         }
-        enum Leve { 
+        enum Level { 
             big,
             min,
             max,
         }
 
         class Person { 
-            
+            public int id { get; set; }
+            public string Name { get; set; }
+            public Level Leve { get; set; }
+
         }
     }
 }
